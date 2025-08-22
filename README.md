@@ -4,7 +4,7 @@
 Turn **horses → zebras** (and back again) on your **phone** or desktop!  
 This repo bundles a **mobile-friendly Streamlit UI**, a clean **PyTorch CycleGAN generator**, tiny **demo trainer**, and **TorchScript export** for mobile runtimes.
 
----
+
 
 ## ✨ Highlights
 
@@ -14,7 +14,7 @@ This repo bundles a **mobile-friendly Streamlit UI**, a clean **PyTorch CycleGAN
 - 🧠 **DIY training (lite)**: A minimal trainer for toy datasets.
 - 📦 **Mobile export**: Export the generator to **TorchScript** for embedding.
 
----
+
 
 ## 🚀 Quickstart
 
@@ -41,7 +41,7 @@ Open the URL shown in the terminal. On mobile, open the same URL and use the **C
 > ```
 > This expects `data/trainA/` (e.g., horses) and `data/trainB/` (e.g., zebras).
 
----
+
 
 ## 🧩 Folder Layout
 
@@ -57,7 +57,7 @@ mobile-cyclegan-animals-ai/
 └─ requirements.txt
 ```
 
----
+
 
 ## 🖥️ Streamlit App (Mobile-first)
 
@@ -71,7 +71,7 @@ mobile-cyclegan-animals-ai/
 streamlit run app.py
 ```
 
----
+
 
 ## ⚙️ Inference via CLI
 
@@ -79,7 +79,7 @@ streamlit run app.py
 python infer.py   --weights weights/horse2zebra_gen.pth   --input examples/horse.jpg   --output out/zebra.png   --size 256 --device cpu
 ```
 
----
+
 
 ## 🧪 Tiny Trainer (Educational)
 
@@ -105,7 +105,7 @@ python train_lite.py --data data --epochs 5 --size 256 --bs 2
 - Increase `--epochs` (e.g., 100+) and use a **GPU** for better quality.
 - Add identity loss and learning-rate schedulers if you extend the trainer.
 
----
+
 
 ## 📲 Mobile Export (TorchScript)
 
@@ -117,7 +117,7 @@ python export_torchscript.py   --weights weights/horse2zebra_gen.pth   --out wei
 
 Load `*.ts` with **PyTorch Mobile** or a native wrapper.
 
----
+
 
 ## 🧠 Model Notes
 
@@ -126,7 +126,7 @@ Load `*.ts` with **PyTorch Mobile** or a native wrapper.
 - **Preprocess**: Resize to square (128–384), normalize to `[-1,1]`.
 - **Postprocess**: Denormalize to `[0,255]`, PNG output.
 
----
+
 
 ## 🛡️ Ethics & Safety
 
@@ -134,7 +134,7 @@ Load `*.ts` with **PyTorch Mobile** or a native wrapper.
 - Clearly label outputs as **synthetic** in downstream apps.
 - Avoid misuse in contexts where realism could mislead users.
 
----
+
 
 ## 🔧 Troubleshooting
 
@@ -142,7 +142,7 @@ Load `*.ts` with **PyTorch Mobile** or a native wrapper.
 - **CUDA OOM**: Lower `--size` to 256 (or 128).
 - **Slow on CPU**: Try 128–224 px; use TorchScript for speedups.
 
----
+
 
 ## 🗺️ Roadmap
 
@@ -151,8 +151,3 @@ Load `*.ts` with **PyTorch Mobile** or a native wrapper.
 - [ ] WebGPU/WebAssembly demo  
 - [ ] On-device iOS/Android inference sample app
 
----
-
-## 📜 License
-
-MIT — have fun, share your animal mashups, and drop a ⭐ if you like it!
